@@ -21,12 +21,9 @@ namespace Labs.Core.Exporters
 
         public void Export(DataSource data)
         {
-            // Setup
             var input = Path.Combine(Folder.FullName, "Exporters","MergeNestedTemplate.docx");
             var output = Path.Combine(Folder.FullName, "Exporters", "MergeNestedOutput.pdf");
-            var random = new Random();
 
-            // Init
             ComponentInfo.SetLicense("FREE-LIMITED-KEY");
             ComponentInfo.FreeLimitReached += (sender, e) =>
             {

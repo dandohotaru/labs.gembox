@@ -10,11 +10,13 @@ namespace Labs.Core
     {
         private static void Main(string[] args)
         {
+            // Build
             var provider = new MemoryProvider();
             var data = provider.Build();
 
-            var location = Assembly.GetExecutingAssembly().Location;
-            var folder = Path.GetDirectoryName(location);
+            // Export
+            var assembly = Assembly.GetExecutingAssembly();
+            var folder = Path.GetDirectoryName(assembly.Location);
             var exporter = new GemboxExporter(folder);
             exporter.Export(data);
 
