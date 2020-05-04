@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AssemblyName>Labs.Core</AssemblyName>
+    <RootNamespace>Labs.Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\assets\templates\MergeNestedTemplate.docx" Link="Exporters\MergeNestedTemplate.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GemBox.Document" Version="31.0.1175" />
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+  </ItemGroup>
+
+</Project>
