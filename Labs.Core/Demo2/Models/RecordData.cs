@@ -14,9 +14,9 @@ namespace Labs.Core.Demo2.Models
 
         public RecordHeader Header { get; protected set; }
 
-        public IEnumerable<RecordRow> Rows { get; protected set; }
+        public IEnumerable<RecordData> Rows { get; protected set; }
 
-        public static implicit operator RecordTable(RecordRow[] rows)
+        public static implicit operator RecordTable(RecordData[] rows)
         {
             return new RecordTable { Rows = rows };
         }
@@ -27,7 +27,7 @@ namespace Labs.Core.Demo2.Models
         public string X { get; set; }
     }
 
-    public class RecordRow
+    public class RecordData
     {
         public int? Id { get; set; }
 

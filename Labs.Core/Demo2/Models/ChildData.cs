@@ -14,9 +14,9 @@ namespace Labs.Core.Demo2.Models
 
         public ChildHeader Header { get; protected set; }
 
-        public IEnumerable<ChildRow> Rows { get; protected set; }
+        public IEnumerable<ChildData> Rows { get; protected set; }
 
-        public static implicit operator ChildTable(ChildRow[] rows)
+        public static implicit operator ChildTable(ChildData[] rows)
         {
             return new ChildTable {Rows = rows};
         }
@@ -27,7 +27,7 @@ namespace Labs.Core.Demo2.Models
         public string X { get; set; }
     }
 
-    public class ChildRow
+    public class ChildData
     {
         public int? Id { get; set; }
 
