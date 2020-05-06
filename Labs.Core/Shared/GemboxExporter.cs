@@ -7,8 +7,7 @@ using GemBox.Document.MailMerging;
 
 namespace Labs.Core.Shared
 {
-    public class GemboxExporter<T> : IReportExporter<T>
-        where T : IReportData
+    public class GemboxExporter : IReportExporter
     {
         public GemboxExporter(string path, string context, IEnumerable<string> extensions)
         {
@@ -33,7 +32,7 @@ namespace Labs.Core.Shared
 
         public IEnumerable<FileInfo> Outputs { get; set; }
 
-        public void Export(T data)
+        public void Export<T>(T data) where T : IReportData
         {
             ComponentInfo.SetLicense("FREE-LIMITED-KEY");
             ComponentInfo.FreeLimitReached += (sender, e) =>

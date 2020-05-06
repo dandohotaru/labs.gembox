@@ -23,7 +23,7 @@ namespace Labs.Core
 
             var assembly = Assembly.GetExecutingAssembly();
             var folder = Path.GetDirectoryName(assembly.Location);
-            var exporter = new GemboxExporter<IReportData>(folder, context, new[] {"pdf", "docx"});
+            var exporter = new GemboxExporter(folder, context, new[] {"pdf", "docx"});
             exporter.Export(data);
         }
 
@@ -36,7 +36,7 @@ namespace Labs.Core
 
             var assembly = Assembly.GetExecutingAssembly();
             var folder = Path.GetDirectoryName(assembly.Location);
-            var exporter = new GemboxExporter<IReportData>(folder, context, new[] {"pdf", "docx"});
+            var exporter = new GemboxExporter(folder, context, new[] {"pdf", "docx"});
             exporter.Export(data);
         }
     }

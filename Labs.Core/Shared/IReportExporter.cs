@@ -1,8 +1,7 @@
 namespace Labs.Core.Shared
 {
-    public interface IReportExporter<in T>
-        where T : IReportData
+    public interface IReportExporter
     {
-        void Export(T data);
+        void Export<T>(T data) where T : IReportData;
     }
 }
