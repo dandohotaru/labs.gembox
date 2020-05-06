@@ -13,10 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Demo1\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <None Update="Demo1\Demo1Template.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Demo2\Demo2Template.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
