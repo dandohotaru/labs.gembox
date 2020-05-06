@@ -1,10 +1,13 @@
 using System;
+using Labs.Core.Shared;
 
-namespace Labs.Core.Models
+namespace Labs.Core.Demo2.Models
 {
-    public class DataSource
+    public class DataSource : IDataSource
     {
         public string Title { get; set; }
+
+        public string Notes { get; set; }
 
         public DateTime Stamp { get; set; }
 

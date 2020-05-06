@@ -8,14 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\assets\templates\MergeNestedTemplate.docx" Link="Exporters\MergeNestedTemplate.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <PackageReference Include="GemBox.Document" Version="31.0.1175" />
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="GemBox.Document" Version="31.0.1175" />
-    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+    <Folder Include="Demo1\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Demo2\Demo2Template.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

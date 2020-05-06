@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Labs.Core.Models
+namespace Labs.Core.Demo2.Models
 {
     public class ChildTable
     {
@@ -8,8 +8,7 @@ namespace Labs.Core.Models
         {
             Header = new ChildHeader
             {
-                Id = nameof(ChildHeader.Id),
-                Type = nameof(ChildHeader.Type)
+                X = "."
             };
         }
 
@@ -25,9 +24,7 @@ namespace Labs.Core.Models
 
     public class ChildHeader
     {
-        public string Id { get; set; }
-
-        public string Type { get; set; }
+        public string X { get; set; }
     }
 
     public class ChildRow

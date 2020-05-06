@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Labs.Core.Models
+namespace Labs.Core.Demo2.Models
 {
     public class RecordTable
     {
@@ -8,9 +8,7 @@ namespace Labs.Core.Models
         {
             Header = new RecordHeader
             {
-                Id = nameof(RecordHeader.Id),
-                Title = nameof(RecordHeader.Title),
-                Description = nameof(RecordHeader.Description),
+                X = "."
             };
         }
 
@@ -26,11 +24,7 @@ namespace Labs.Core.Models
 
     public class RecordHeader
     {
-        public string Id { get; set; }
-
-        public string Title { get; set; }
-
-        public string Description { get; set; }
+        public string X { get; set; }
     }
 
     public class RecordRow
