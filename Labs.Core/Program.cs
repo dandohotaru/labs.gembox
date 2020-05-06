@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Reflection;
 using Labs.Core.Demo1;
 using Labs.Core.Demo2;
@@ -13,8 +12,6 @@ namespace Labs.Core
         {
             RunDemo1();
             RunDemo2();
-
-            Console.WriteLine("Press any key to continue");
         }
 
         private static void RunDemo1()
@@ -26,7 +23,7 @@ namespace Labs.Core
 
             var assembly = Assembly.GetExecutingAssembly();
             var folder = Path.GetDirectoryName(assembly.Location);
-            var exporter = new DataExporter<IDataSource>(folder, context, new[] { "pdf", "docx" });
+            var exporter = new GemboxExporter<IReportData>(folder, context, new[] {"pdf", "docx"});
             exporter.Export(data);
         }
 
@@ -39,7 +36,7 @@ namespace Labs.Core
 
             var assembly = Assembly.GetExecutingAssembly();
             var folder = Path.GetDirectoryName(assembly.Location);
-            var exporter = new DataExporter<IDataSource>(folder, context, new[] {"pdf", "docx"});
+            var exporter = new GemboxExporter<IReportData>(folder, context, new[] {"pdf", "docx"});
             exporter.Export(data);
         }
     }

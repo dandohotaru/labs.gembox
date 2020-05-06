@@ -7,10 +7,10 @@ using GemBox.Document.MailMerging;
 
 namespace Labs.Core.Shared
 {
-    public class DataExporter<T> : IDataExporter<T>
-        where T : IDataSource
+    public class GemboxExporter<T> : IReportExporter<T>
+        where T : IReportData
     {
-        public DataExporter(string path, string context, IEnumerable<string> extensions)
+        public GemboxExporter(string path, string context, IEnumerable<string> extensions)
         {
             if (path == null)
                 throw new ArgumentNullException(nameof(path));

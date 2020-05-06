@@ -1,7 +1,7 @@
 namespace Labs.Core.Shared
 {
-    public interface IDataProvider<out T>
-        where T : IDataSource
+    public interface IReportProvider<out T>
+        where T : IReportData
     {
         T Build(string context);
     }

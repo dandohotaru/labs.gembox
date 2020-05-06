@@ -4,13 +4,13 @@ using Labs.Core.Shared;
 
 namespace Labs.Core.Demo2
 {
-    public class Demo2Provider : IDataProvider<DataSource>
+    public class Demo2Provider : IReportProvider<ReportData>
     {
-        public DataSource Build(string context)
+        public ReportData Build(string context)
         {
             var random = new Random();
 
-            return new DataSource
+            return new ReportData
             {
                 Title = context,
                 Notes = random.Text(75),

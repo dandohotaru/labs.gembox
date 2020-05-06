@@ -3,7 +3,7 @@ using Labs.Core.Shared;
 
 namespace Labs.Core.Demo2.Models
 {
-    public class DataSource : IDataSource
+    public class ReportData : IReportData
     {
         public string Title { get; set; }
 
