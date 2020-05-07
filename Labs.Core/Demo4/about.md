@@ -1,7 +1,7 @@
 ﻿# about
-- merge with simple object like {records[]}
+- merge with simple object like {records: {tags: {value:string}[]}}[]
 - map inner string collection to bulleted lists
-- rely on implicit operator to ease the setup
+- rely on implicit operator to ease the data mapping
 
 ## data
 ```
@@ -14,7 +14,7 @@
 			{
 				Id = ...,
 				Title = ...,
-				Children = new ChildData[]
+				Tags = new TagData[]
 				{
 					"digital",
 					"media",
@@ -25,20 +25,20 @@
 	}
 ```
 ```    
-	public class ChildData
+	public class TagData
 	{
 		public string Value { get; set; }
 
-		public static implicit operator ChildData(string value)
+		public static implicit operator TagData(string value)
 		{
-			return new ChildData { Value = value };
+			return new TagData { Value = value };
 		}
 	}
 ```
 
 ## template
 ```
-	«#Children»
+	«#Tags»
 	• «Value»
-	«/Children»
+	«/Tags»
 ```

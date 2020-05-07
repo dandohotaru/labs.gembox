@@ -8,6 +8,6 @@ namespace Labs.Core.Demo4.Models
 
         public string Description { get; set; }
 
-        public ChildData[] Children { get; set; }
+        public TagData[] Tags { get; set; }
     }
 }

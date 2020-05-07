@@ -22,7 +22,7 @@ namespace Labs.Core.Demo4
                         Id = random.Next(10, 19),
                         Title = "Sample 1",
                         Description = random.Text(20),
-                        Children = new ChildData[]
+                        Tags = new TagData[]
                         {
                             "social",
                             "networks",
@@ -33,7 +33,7 @@ namespace Labs.Core.Demo4
                         Id = random.Next(20, 29),
                         Title = "Sample 2",
                         Description = random.Text(20),
-                        Children = new ChildData[]
+                        Tags = new TagData[]
                         {
                             "digital",
                             "media",
@@ -51,7 +51,7 @@ namespace Labs.Core.Demo4
                         Id = random.Next(40, 49),
                         Title = "Sample 4",
                         Description = random.Text(20),
-                        Children = new ChildData[]
+                        Tags = new TagData[]
                         {
                             random.Text(10),
                             random.Text(7),
