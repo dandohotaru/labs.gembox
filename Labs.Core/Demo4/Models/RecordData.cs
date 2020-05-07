@@ -9,5 +9,7 @@ namespace Labs.Core.Demo4.Models
         public string Description { get; set; }
 
         public TagData[] Tags { get; set; }
+
+        public TagData[] Types { get; set; }
     }
 }

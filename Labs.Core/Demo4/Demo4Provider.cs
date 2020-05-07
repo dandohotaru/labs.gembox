@@ -26,6 +26,12 @@ namespace Labs.Core.Demo4
                         {
                             "social",
                             "networks",
+                        },
+                        Types = new TagData[]
+                        {
+                            "typea",
+                            "typeb",
+                            "typec",
                         }
                     },
                     new RecordData
@@ -62,7 +68,12 @@ namespace Labs.Core.Demo4
                     {
                         Id = random.Next(50, 59),
                         Title = "Sample 5",
-                        Description = random.Text(20)
+                        Description = random.Text(20),
+                        Types = new TagData[]
+                        {
+                            "typeb",
+                            "typec",
+                        }
                     }
                 }
             };
