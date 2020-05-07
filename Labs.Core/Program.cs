@@ -2,6 +2,7 @@
 using System.Reflection;
 using Labs.Core.Demo1;
 using Labs.Core.Demo2;
+using Labs.Core.Demo3;
 using Labs.Core.Shared;
 
 namespace Labs.Core
@@ -12,6 +13,7 @@ namespace Labs.Core
         {
             RunDemo1();
             RunDemo2();
+            RunDemo3();
         }
 
         private static void RunDemo1()
@@ -37,6 +39,19 @@ namespace Labs.Core
             var assembly = Assembly.GetExecutingAssembly();
             var folder = Path.GetDirectoryName(assembly.Location);
             var exporter = new GemboxExporter(folder, context, new[] {"pdf", "docx"});
+            exporter.Export(data);
+        }
+
+        private static void RunDemo3()
+        {
+            const string context = "Demo3";
+
+            var provider = new Demo3Provider();
+            var data = provider.Build(context);
+
+            var assembly = Assembly.GetExecutingAssembly();
+            var folder = Path.GetDirectoryName(assembly.Location);
+            var exporter = new GemboxExporter(folder, context, new[] { "pdf", "docx" });
             exporter.Export(data);
         }
     }
