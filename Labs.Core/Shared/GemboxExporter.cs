@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using GemBox.Document;
 using GemBox.Document.MailMerging;
 
@@ -9,14 +10,12 @@ namespace Labs.Core.Shared
 {
     public class GemboxExporter : IReportExporter
     {
-        public GemboxExporter(string path, string context, IEnumerable<string> extensions)
+        public GemboxExporter(string context, IEnumerable<string> extensions)
         {
-            if (path == null)
-                throw new ArgumentNullException(nameof(path));
-
-            var folder = new DirectoryInfo(path);
+            var assembly = Assembly.GetExecutingAssembly();
+            var folder = new DirectoryInfo(Path.GetDirectoryName(assembly.Location));
             if (!folder.Exists)
-                throw new DirectoryNotFoundException(path);
+                throw new DirectoryNotFoundException(folder.FullName);
 
             Template = new FileInfo(Path.Combine(folder.FullName, context, $"{context}Template.docx"));
             if (!Template.Exists)

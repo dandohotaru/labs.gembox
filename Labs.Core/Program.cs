@@ -18,40 +18,34 @@ namespace Labs.Core
 
         private static void RunDemo1()
         {
-            const string context = "Demo1";
+            const string feature = "Demo1";
 
             var provider = new Demo1Provider();
-            var data = provider.Build(context);
-
-            var assembly = Assembly.GetExecutingAssembly();
-            var folder = Path.GetDirectoryName(assembly.Location);
-            var exporter = new GemboxExporter(folder, context, new[] {"pdf", "docx"});
+            var data = provider.Build(feature);
+            
+            var exporter = new GemboxExporter(feature, new[] {"pdf", "docx"});
             exporter.Export(data);
         }
 
         private static void RunDemo2()
         {
-            const string context = "Demo2";
+            const string feature = "Demo2";
 
             var provider = new Demo2Provider();
-            var data = provider.Build(context);
-
-            var assembly = Assembly.GetExecutingAssembly();
-            var folder = Path.GetDirectoryName(assembly.Location);
-            var exporter = new GemboxExporter(folder, context, new[] {"pdf", "docx"});
+            var data = provider.Build(feature);
+            
+            var exporter = new GemboxExporter(feature, new[] {"pdf", "docx"});
             exporter.Export(data);
         }
 
         private static void RunDemo3()
         {
-            const string context = "Demo3";
+            const string feature = "Demo3";
 
             var provider = new Demo3Provider();
-            var data = provider.Build(context);
+            var data = provider.Build(feature);
 
-            var assembly = Assembly.GetExecutingAssembly();
-            var folder = Path.GetDirectoryName(assembly.Location);
-            var exporter = new GemboxExporter(folder, context, new[] { "pdf", "docx" });
+            var exporter = new GemboxExporter(feature, new[] { "pdf", "docx" });
             exporter.Export(data);
         }
     }
