@@ -8,10 +8,6 @@ namespace Labs.Core.Demo4.Models
 
         public string Description { get; set; }
 
-        public TagData[] Categories { get; set; }
-
         public ChildData[] Children { get; set; }
-
-        public dynamic Container => new { Children };
     }
 }
