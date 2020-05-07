@@ -12,6 +12,8 @@ namespace Labs.Core.Shared
     {
         public GemboxExporter(string context, IEnumerable<string> extensions)
         {
+            Context = context ?? throw new ArgumentNullException(nameof(context));
+
             var assembly = Assembly.GetExecutingAssembly();
             var folder = new DirectoryInfo(Path.GetDirectoryName(assembly.Location));
             if (!folder.Exists)
@@ -27,9 +29,11 @@ namespace Labs.Core.Shared
                       select output;
         }
 
-        public FileInfo Template { get; set; }
+        protected string Context { get; }
 
-        public IEnumerable<FileInfo> Outputs { get; set; }
+        protected FileInfo Template { get; }
+
+        protected IEnumerable<FileInfo> Outputs { get; }
 
         public void Export<T>(T data) where T : IReportData
         {
@@ -48,6 +52,7 @@ namespace Labs.Core.Shared
             document.MailMerge.ClearOptions = options;
             document.MailMerge.Execute(data);
 
+            Console.WriteLine($"# {Context}");
             Console.WriteLine("Template");
             Console.WriteLine(Template.FullName);
             Console.WriteLine();
