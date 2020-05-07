@@ -10,6 +10,13 @@ dotnet restore
 dotnet build demo.sln
 ```
 
+# demos
+[demo1](https://github.com/dandohotaru/labs.gembox/blob/master/Labs.Core/Demo1/about.md)
+[demo2](https://github.com/dandohotaru/labs.gembox/blob/master/Labs.Core/Demo2/about.md)
+[demo3](https://github.com/dandohotaru/labs.gembox/blob/master/Labs.Core/Demo3/about.md)
+[demo4](https://github.com/dandohotaru/labs.gembox/blob/master/Labs.Core/Demo4/about.md)
+...
+
 # docs
 Mail Merge
 https://www.gemboxsoftware.com/document/help/html/Mail_Merge.htm#Nested

@@ -5,25 +5,39 @@
 
 ## data
 ```
-return new ReportData
-{
-    Title = title,
-    Records = new[]
-    {
-        new RecordData
-        {
-            Id = ...,
-            Title = ...,
-            Children = new[]
-            {
-                new ChildData {Id = random.Next(100, 199), Type = "one"},
-                new ChildData {Id = random.Next(100, 199), Type = "two"},
-                new ChildData {Id = random.Next(100, 199), Type = "three"},
-                new ChildData {Id = random.Next(100, 199), Type = "four"}
-            }
-        },
+	return new ReportData
+	{
+		Title = title,
+		Records = new[]
+		{
+			new RecordData
+			{
+				Id = ...,
+				Title = ...,
+				Children = new[]
+				{
+					new ChildData {Id = random.Next(100, 199), Type = "one"},
+					new ChildData {Id = random.Next(100, 199), Type = "two"},
+					new ChildData {Id = random.Next(100, 199), Type = "three"},
+					new ChildData {Id = random.Next(100, 199), Type = "four"}
+				}
+			},
+		}
 	}
-}
+```
+```
+	public class RecordData
+	{
+		public int? Id { get; set; }
+
+		public string Title { get; set; }
+
+		public string Description { get; set; }
+
+		public ChildData[] Children { get; set; }
+
+		public dynamic Container => new { Children };
+	}
 ```
 
 ## template

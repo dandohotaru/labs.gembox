@@ -5,41 +5,40 @@
 
 ## data
 ```
-return new ReportData
-{
-    Title = title,
-    Records = new[]
-    {
-        new RecordData
-        {
-            Id = ...,
-            Title = ...,
-            Children = new ChildData[]
-            {
-                "digital",
-                "media",
-                "press",
-            }
-        },
+	return new ReportData
+	{
+		Title = title,
+		Records = new[]
+		{
+			new RecordData
+			{
+				Id = ...,
+				Title = ...,
+				Children = new ChildData[]
+				{
+					"digital",
+					"media",
+					"press",
+				}
+			},
+		}
 	}
-}
+```
+```    
+	public class ChildData
+	{
+		public string Value { get; set; }
 
-...
-    
-public class ChildData
-{
-    public string Value { get; set; }
-
-    public static implicit operator ChildData(string value)
-    {
-        return new ChildData { Value = value };
-    }
-}
+		public static implicit operator ChildData(string value)
+		{
+			return new ChildData { Value = value };
+		}
+	}
 ```
 
 ## template
 ```
-«#Children»
-• «Value»
-«/Children»
+	«#Children»
+	• «Value»
+	«/Children»
 ```
