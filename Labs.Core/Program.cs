@@ -10,53 +10,18 @@ namespace Labs.Core
     {
         private static void Main(string[] args)
         {
-            //RunDemo1();
-            //RunDemo2();
-            //RunDemo3();
-            RunDemo4();
+            Run(new Demo1Provider(), "Demo1");
+            Run(new Demo2Provider(), "Demo2");
+            Run(new Demo3Provider(), "Demo3");
+            Run(new Demo4Provider(), "Demo4");
         }
 
-        private static void RunDemo1()
+        public static void Run<T>(IReportProvider<T> provider, string feature)
+            where T : IReportData
         {
-            const string feature = "Demo1";
-
-            var provider = new Demo1Provider();
-            var data = provider.Build(feature);
-
-            var exporter = new GemboxExporter(feature, new[] {"pdf", "docx"});
-            exporter.Export(data);
-        }
-
-        private static void RunDemo2()
-        {
-            const string feature = "Demo2";
-
-            var provider = new Demo2Provider();
-            var data = provider.Build(feature);
-
-            var exporter = new GemboxExporter(feature, new[] {"pdf", "docx"});
-            exporter.Export(data);
-        }
-
-        private static void RunDemo3()
-        {
-            const string feature = "Demo3";
-
-            var provider = new Demo3Provider();
-            var data = provider.Build(feature);
-
-            var exporter = new GemboxExporter(feature, new[] {"pdf", "docx"});
-            exporter.Export(data);
-        }
-
-        private static void RunDemo4()
-        {
-            const string feature = "Demo4";
-
-            var provider = new Demo4Provider();
-            var data = provider.Build(feature);
-
-            var exporter = new GemboxExporter(feature, new[] {"pdf", "docx"});
+            var data = provider.Build(title: feature);
+            var extensions = new[] {"pdf", "docx"};
+            var exporter = new GemboxExporter(context: feature, extensions);
             exporter.Export(data);
         }
     }

@@ -6,13 +6,13 @@ namespace Labs.Core.Demo1
 {
     public class Demo1Provider : IReportProvider<ReportData>
     {
-        public ReportData Build(string context)
+        public ReportData Build(string title)
         {
             var random = new Random();
 
             return new ReportData
             {
-                Title = context,
+                Title = title,
                 Notes = random.Text(75),
                 Stamp = DateTime.Now,
                 Records = new[]
